@@ -1,0 +1,77 @@
+KVcache prepared in 13.74304485321045 seconds
+KVcache prepared in 12.83761477470398 seconds
+[0]: Semantic Similarity: 0.92899,	 cache time: 0.0,	 generate time: 67.37237787246704
+[0]: [Cumulative]: Semantic Similarity: 0.92899,	 cache time: 0.0,	 generate time: 67.37237787246704
+[1]: Semantic Similarity: 0.92176,	 cache time: 7.152557373046875e-07,	 generate time: 59.01572895050049
+[1]: [Cumulative]: Semantic Similarity: 0.92537,	 cache time: 3.5762786865234375e-07,	 generate time: 63.194053411483765
+[2]: Semantic Similarity: 0.33262,	 cache time: 9.5367431640625e-07,	 generate time: 192.18874502182007
+[2]: [Cumulative]: Semantic Similarity: 0.72779,	 cache time: 5.563100179036459e-07,	 generate time: 106.19228394826253
+[3]: Semantic Similarity: 0.89102,	 cache time: 9.5367431640625e-07,	 generate time: 80.87308597564697
+[3]: [Cumulative]: Semantic Similarity: 0.7686,	 cache time: 6.556510925292969e-07,	 generate time: 99.86248445510864
+KVcache prepared in 14.888589143753052 seconds
+[4]: Semantic Similarity: 0.69938,	 cache time: 0.0,	 generate time: 69.41459608078003
+[4]: [Cumulative]: Semantic Similarity: 0.75475,	 cache time: 5.245208740234375e-07,	 generate time: 93.77290678024292
+
+Result for ./result_kvcache.txt
+Prepare time: 12.83761477470398
+Average Semantic Similarity: 0.7547527432441712
+cache time: 5.245208740234375e-07,	 generate time: 93.77290678024292
+
+Question 0: Which NFL team represented the AFC at Super Bowl 50?
+Answer: 
+    Answer: Denver Broncos
+Ground Truth: Denver Broncos
+--------------------------------------------------------------------------------
+KVcache prepared in 13.344525814056396 seconds
+
+Question 0: Which NFL team represented the AFC at Super Bowl 50?
+Answer: 
+    Answer: Denver Broncos
+Ground Truth: Denver Broncos
+--------------------------------------------------------------------------------
+[0]: Semantic Similarity: 0.92899,	 cache time: 0.0,	 generate time: 66.88329696655273
+KVcache prepared in 12.719436883926392 seconds
+
+Question 0: Which NFL team represented the AFC at Super Bowl 50?
+Answer: 
+    Answer: Denver Broncos
+Ground Truth: Denver Broncos
+--------------------------------------------------------------------------------
+[0]: Semantic Similarity: 0.92899,	 cache time: 9.5367431640625e-07,	 generate time: 66.7687451839447
+[0]: [Cumulative]: Semantic Similarity: 0.92899,	 cache time: 9.5367431640625e-07,	 generate time: 66.7687451839447
+
+Question 1: Which NFL team represented the NFC at Super Bowl 50?
+Answer: 
+    Answer: Carolina Panthers
+Ground Truth: Carolina Panthers
+--------------------------------------------------------------------------------
+[1]: Semantic Similarity: 0.92176,	 cache time: 9.5367431640625e-07,	 generate time: 59.50909113883972
+[1]: [Cumulative]: Semantic Similarity: 0.92537,	 cache time: 9.5367431640625e-07,	 generate time: 63.13891816139221
+
+Question 2: Where did Super Bowl 50 take place?
+Answer: Super Bowl 50 took place at Levi's Stadium in the San Francisco Bay Area at Santa Clara, California.
+Ground Truth: Santa Clara, California
+--------------------------------------------------------------------------------
+[2]: Semantic Similarity: 0.33262,	 cache time: 0.0,	 generate time: 193.47268104553223
+[2]: [Cumulative]: Semantic Similarity: 0.72779,	 cache time: 6.357828776041666e-07,	 generate time: 106.58350578943889
+
+Question 3: Which NFL team won Super Bowl 50?
+Answer: 
+    The answer is Denver Broncos.
+Ground Truth: Denver Broncos
+--------------------------------------------------------------------------------
+[3]: Semantic Similarity: 0.89102,	 cache time: 9.5367431640625e-07,	 generate time: 82.95003294944763
+[3]: [Cumulative]: Semantic Similarity: 0.7686,	 cache time: 7.152557373046875e-07,	 generate time: 100.67513757944107
+
+Question 4: What color was used to emphasize the 50th anniversary of the Super Bowl?
+Answer: 
+    Answer: Gold.
+Ground Truth: gold
+--------------------------------------------------------------------------------
+[4]: Semantic Similarity: 0.69938,	 cache time: 9.5367431640625e-07,	 generate time: 53.43267822265625
+[4]: [Cumulative]: Semantic Similarity: 0.75475,	 cache time: 7.62939453125e-07,	 generate time: 91.2266457080841
+
+Result for ./result_kvcache.txt
+Prepare time: 12.719436883926392
+Average Semantic Similarity: 0.7547527432441712
+cache time: 7.62939453125e-07,	 generate time: 91.2266457080841
