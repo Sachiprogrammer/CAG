@@ -50,3 +50,11 @@ ENV/
 # Logs
 *.log
 logs/
+
+# Large dataset files
+datasets/hotpotqa/hotpotqa-question-answering-dataset.zip.zip
+datasets/hotpotqa/hotpotqa-question-answering-dataset.zip/hotpot_train_v1.1.json
+
+# Results and output files
+results/
+*.txt
