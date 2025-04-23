@@ -1,3 +1,7 @@
+# Dataset directories
+datasets/
+results/
+
 # Python
 __pycache__/
 *.py[cod]
@@ -31,10 +35,14 @@ ENV/
 *.swp
 *.swo
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# OS
+.DS_Store
+Thumbs.db
 
-# Local development settings
+# Logs
+*.log
+
+# Local configuration
 .env
 .env.local
 
@@ -47,14 +55,9 @@ ENV/
 *.h5
 *.hdf5
 
-# Logs
-*.log
-logs/
-
 # Large dataset files
 datasets/hotpotqa/hotpotqa-question-answering-dataset.zip.zip
 datasets/hotpotqa/hotpotqa-question-answering-dataset.zip/hotpot_train_v1.1.json
 
 # Results and output files
-results/
 *.txt

@@ -1,14 +1,12 @@
 #!/bin/bash
-# 在這裡自訂 k 和 p 的值
+k=5 
+p=20  
 
-k=3  # 設定 k 值
-p=100  # 設定 p 值
-
-datasets=("squad-train")
+datasets=("squad-train" "hotpotqa-train" "natural-questions-train")
 # models=("3.1-8B" "3.2-3B" "3.2-1B")
-models=("3.1-8B")
+models=("3.1-8B" "3.2-3B" "3.2-1B")
 indices=("openai" "bm25")
-maxQuestions=("1000")
+maxQuestions=("100" "500" "1000")
 top_k=("1" "3" "5" "10" "20")
 
 for dataset in "${datasets[@]}"; do
