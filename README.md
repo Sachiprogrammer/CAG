@@ -11,7 +11,7 @@
 - [Features](#features)
 - [Why KVCache for CAG?](#why-kvcache-for-cag)
 - [Datasets](#datasets)
-- [Deployment Instructions](#deploymentinstructions)
+- [Deployment Instructions](#deployment-instructions)
 - [Usage in CAG Applications](#usage-in-cag-applications)
   - [Basic Integration with Attention Mechanisms](#basic-integration-with-attention-mechanisms)
   - [Multihead Attention Caching](#multihead-attention-caching)
@@ -23,13 +23,13 @@
 
 ---
 
-## 🧠 Overview
+## Overview
 
 KVCache is an efficient in-memory key-value store specifically optimized for use in Context-Aware Generation (CAG) architectures employing multihead attention. This implementation provides the underlying caching infrastructure to efficiently store and retrieve key-value pairs used in attention mechanisms, enabling faster processing and reduced memory footprint during inference.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Optimized for storage of attention key-value pairs
 - Support for multihead attention caching patterns
@@ -41,7 +41,7 @@ KVCache is an efficient in-memory key-value store specifically optimized for use
 
 ---
 
-## ❓ Why KVCache for CAG?
+## Why KVCache for CAG?
 
 Context-Aware Generation models, particularly those using transformer architectures with multihead attention, benefit from efficient key-value caching:
 
@@ -57,7 +57,7 @@ Context-Aware Generation models, particularly those using transformer architectu
 <p><a href="https://ai.google.com/research/NaturalQuestions/download" target="_blank">Google Natural Questions</a></p>
 <p><a href="https://huggingface.co/datasets/mandarjoshi/trivia_qa" target="_blank">TriviaqQA</a></p>
 
-## 📦 Deployment guidelines for CAG:
+## Deployment Instructions
 Update your API keys in the environment variables
 
 To run CAG:
@@ -77,11 +77,11 @@ python rag.py \
 
 ---
 
-## 🧩 Usage in CAG Applications
+## Usage in CAG Applications
 
-### 📌 Basic Integration with Attention Mechanisms
+### Basic Integration with Attention Mechanisms
 
-python
+```python
 from kvcache import KVCache
 
 # Create a new cache configured for attention mechanism storage
@@ -94,7 +94,6 @@ attention_cache.set("layer1_head0_v", value_tensor)
 # Retrieve cached attention keys/values during inference
 cached_key = attention_cache.get("layer1_head0_k")
 cached_value = attention_cache.get("layer1_head0_v")
-
 
 ### 🧠 Multihead Attention Caching
 
