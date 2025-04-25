@@ -10,7 +10,8 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Why KVCache for CAG?](#why-kvcache-for-cag)
-- [Installation](#installation)
+- [Datasets](#datasets)
+- [Deployment Instructions](#installation)
 - [Usage in CAG Applications](#usage-in-cag-applications)
   - [Basic Integration with Attention Mechanisms](#basic-integration-with-attention-mechanisms)
   - [Multihead Attention Caching](#multihead-attention-caching)
@@ -52,11 +53,29 @@ Context-Aware Generation models, particularly those using transformer architectu
 
 ---
 
-## 📦 Installation
+## Datasets
+<p><a href="https://www.kaggle.com/api/v1/datasets/download/stanfordu/stanford-question-answering-dataset" target="_blank">SQuAD</a></p>
+<p><a href="https://www.kaggle.com/api/v1/datasets/download/jeromeblanchet/hotpotqa-question-answering-dataset" target="_blank">HotpotQA</a></p>
+<p><a href="https://ai.google.com/research/NaturalQuestions/download" target="_blank">Google Natural Questions</a></p>
+<p><a href="https://huggingface.co/datasets/mandarjoshi/trivia_qa" target="_blank">TriviaqQA</a></p>
 
-bash
-pip install kvcache
+## 📦 Deployment guidelines for CAG:
+Update your API keys in the environment variables
 
+To run CAG:
+python kvcache.py --dataset "trivia-qa" --modelname "meta-llama/Llama-2-7b-chat-hf" --randomSeed 0 --output "./result_kvcache.txt"
+You can change the dataset and the llama models
+
+To run RAG:
+python rag.py \
+    --index "openai" \           # can change to other ai providers based on API keys
+    --dataset "trivia-qa" \    # can be changed based on the dataset
+    --modelname "meta-llama/Llama-2-7b-chat-hf" \ # model name can be changed
+    --topk 3 \                 # Number of top documents to retrieve
+    --maxKnowledge 10 \        # Maximum number of knowledge items
+    --maxParagraph 100 \       # Maximum paragraphs per knowledge item
+    --maxQuestion 50 \         # Maximum number of questions to process
+    --output "./rag_results.txt"
 
 ---
 
@@ -143,38 +162,10 @@ All operations on the `KVCache` are thread-safe, using internal locks to ensure 
 
 ---
 
-## 🔁 Example CAG Implementation
-
-python
-import time
-from kvcache import KVCache
-
-attention_cache = KVCache(max_size=1000)
-
-for token_idx in range(sequence_length):
-    for layer in range(num_layers):
-        for head in range(num_heads):
-            key = compute_key(token_idx, layer, head)  # user-defined
-            value = compute_value(token_idx, layer, head)  # user-defined
-
-            cache_key = f"tok{token_idx}_layer{layer}_head{head}_k"
-            cache_val_key = f"tok{token_idx}_layer{layer}_head{head}_v"
-
-            attention_cache.set(cache_key, key)
-            attention_cache.set(cache_val_key, value)
-
-# Print stats
-print("Cache performance:", attention_cache.stats)
-
-
-> 💡 *Note: `compute_key` and `compute_value` are user-defined functions tailored to your model pipeline.*
-
----
 
 ## 📈 Performance Considerations
 
 - Optimized for O(1) lookup times
-- Thread-safe with automatic cleanup
 - Tune `max_size` for your model’s token window × attention heads
 - For large-scale applications, consider **hierarchical cache layers**
 
