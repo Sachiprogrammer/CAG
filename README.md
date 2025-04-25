@@ -3,8 +3,6 @@
 
 # KVCache for Context-Aware Generation (CAG)
 
-A specialized key-value cache implementation designed to support Context-Aware Generation with multihead attention mechanisms in Python.
-
 ---
 
 ## 📑 Table of Contents
@@ -184,7 +182,3 @@ print("Cache performance:", attention_cache.stats)
 
 
 
-
----
-
-Would you like me to save this into a .md file and send it to you directly?
