@@ -12,12 +12,7 @@
 - [Why KVCache for CAG?](#why-kvcache-for-cag)
 - [Datasets](#datasets)
 - [Deployment Instructions](#deployment-instructions)
-- [Usage in CAG Applications](#usage-in-cag-applications)
-  - [Basic Integration with Attention Mechanisms](#basic-integration-with-attention-mechanisms)
-  - [Multihead Attention Caching](#multihead-attention-caching)
-  - [Managing Context Window](#managing-context-window)
-- [API Reference](#api-reference)
-- [Thread Safety for Parallel Processing](#thread-safety-for-parallel-processing)
+- [Code Reference](#code-reference)
 - [Performance Considerations](#performance-considerations)
 - [Contributing](#contributing)
 
@@ -81,48 +76,7 @@ rag.py \
 
 ---
 
-## Usage in CAG Applications
-
-### Basic Integration with Attention Mechanisms
-
-```python
-from kvcache import KVCache
-
-# Create a new cache configured for attention mechanism storage
-attention_cache = KVCache(max_size=10000)
-
-# Store key-value pairs from an attention head
-attention_cache.set("layer1_head0_k", key_tensor)
-attention_cache.set("layer1_head0_v", value_tensor)
-
-# Retrieve cached attention keys/values during inference
-cached_key = attention_cache.get("layer1_head0_k")
-cached_value = attention_cache.get("layer1_head0_v")
-```
-
-### Multihead Attention Caching
-
-```python
-for head in range(num_heads):
-    attention_cache.set(f"layer{layer}_head{head}_k", key_tensors[head])
-    attention_cache.set(f"layer{layer}_head{head}_v", value_tensors[head])
-
-for head in range(num_heads):
-    k = attention_cache.get(f"layer{layer}_head{head}_k")
-    v = attention_cache.get(f"layer{layer}_head{head}_v")
-    # Use k, v in attention computation
-```
-
-### Managing Context Window
-
-```python
-# Set a value that expires after a defined time window
-attention_cache.set("token_123_context", context_data, expiry_time=context_window_size)
-```
-
----
-
-## API Reference
+## Code Reference
 
 ### `KVCache` Class
 
@@ -158,11 +112,6 @@ KVCache(max_size=10000, cleanup_interval=60)
 
 ---
 
-## Thread Safety for Parallel Processing
-
-All operations on the `KVCache` are thread-safe, using internal locks to ensure consistency across concurrent reads/writes — ideal for multi-head attention in parallel environments.
-
----
 
 ## Performance Considerations
 
