@@ -182,17 +182,6 @@ print("Cache performance:", attention_cache.stats)
 
 ---
 
-## 📄 License
-
-MIT License
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to open issues or submit pull requests to improve this implementation and support broader CAG use cases.
-
----
 
 
 
