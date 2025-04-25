@@ -94,10 +94,11 @@ attention_cache.set("layer1_head0_v", value_tensor)
 # Retrieve cached attention keys/values during inference
 cached_key = attention_cache.get("layer1_head0_k")
 cached_value = attention_cache.get("layer1_head0_v")
+```
 
-### 🧠 Multihead Attention Caching
+### Multihead Attention Caching
 
-python
+```python
 for head in range(num_heads):
     attention_cache.set(f"layer{layer}_head{head}_k", key_tensors[head])
     attention_cache.set(f"layer{layer}_head{head}_v", value_tensors[head])
@@ -106,26 +107,26 @@ for head in range(num_heads):
     k = attention_cache.get(f"layer{layer}_head{head}_k")
     v = attention_cache.get(f"layer{layer}_head{head}_v")
     # Use k, v in attention computation
+```
 
+### Managing Context Window
 
-### 🕰 Managing Context Window
-
-python
+```python
 # Set a value that expires after a defined time window
 attention_cache.set("token_123_context", context_data, expiry_time=context_window_size)
-
+```
 
 ---
 
-## 📘 API Reference
+## API Reference
 
 ### `KVCache` Class
 
 #### Constructor
 
-python
+```python
 KVCache(max_size=10000, cleanup_interval=60)
-
+```
 
 - `max_size` (int): Maximum number of items the cache can hold
 - `cleanup_interval` (int): Interval in seconds for automatic cleanup of expired items
@@ -153,20 +154,25 @@ KVCache(max_size=10000, cleanup_interval=60)
 
 ---
 
-## 🧵 Thread Safety for Parallel Processing
+## Thread Safety for Parallel Processing
 
 All operations on the `KVCache` are thread-safe, using internal locks to ensure consistency across concurrent reads/writes — ideal for multi-head attention in parallel environments.
 
 ---
 
-
-## 📈 Performance Considerations
+## Performance Considerations
 
 - Optimized for O(1) lookup times
-- Tune `max_size` for your model’s token window × attention heads
+- Tune `max_size` for your model's token window × attention heads
 - For large-scale applications, consider **hierarchical cache layers**
 
 ---
 
+## Contributing
+<p><a href="https://github.com/deepikasai-mettu" target="_blank">Deepika Mettu</a></p>
 
+<p><a href="https://github.com/Sachiprogrammer" target="_blank">Sachi Patel</a></p>
 
+<p><a href="https://github.com/ruju0901" target="_blank">Ruju Shah</a></p>
+
+---
