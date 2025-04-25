@@ -18,9 +18,7 @@
   - [Managing Context Window](#managing-context-window)
 - [API Reference](#api-reference)
 - [Thread Safety for Parallel Processing](#thread-safety-for-parallel-processing)
-- [Example CAG Implementation](#example-cag-implementation)
 - [Performance Considerations](#performance-considerations)
-- [License](#license)
 - [Contributing](#contributing)
 
 ---
