@@ -61,15 +61,13 @@ Context-Aware Generation models, particularly those using transformer architectu
 Update your API keys in the environment variables
 
 To run CAG:
-```
-python
+```python
 kvcache.py --dataset "trivia-qa" --modelname "meta-llama/Llama-2-7b-chat-hf" --randomSeed 0 --output "./result_kvcache.txt"
 ```
 You can change the dataset and the llama models
 
 To run RAG:
-```
-python
+```python
 rag.py \
     --index "openai" \           # can change to other ai providers based on API keys
     --dataset "trivia-qa" \    # can be changed based on the dataset
