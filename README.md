@@ -1,6 +1,6 @@
 ---
 
-markdown
+
 # KVCache for Context-Aware Generation (CAG)
 
 A specialized key-value cache implementation designed to support Context-Aware Generation with multihead attention mechanisms in Python.
