@@ -1,7 +1,7 @@
 ---
 
 
-# KVCache for Context-Aware Generation (CAG)
+# KVCache for Cache Augmented Generation (CAG)
 
 ---
 
@@ -20,7 +20,7 @@
 
 ## Overview
 
-KVCache is an efficient in-memory key-value store specifically optimized for use in Context-Aware Generation (CAG) architectures employing multihead attention. This implementation provides the underlying caching infrastructure to efficiently store and retrieve key-value pairs used in attention mechanisms, enabling faster processing and reduced memory footprint during inference.
+KVCache is an efficient in-memory key-value store specifically optimized for use in Cache Augmented Generation (CAG) architectures employing multihead attention. This implementation provides the underlying caching infrastructure to efficiently store and retrieve key-value pairs used in attention mechanisms, enabling faster processing and reduced memory footprint during inference.
 
 ---
 
@@ -38,7 +38,7 @@ KVCache is an efficient in-memory key-value store specifically optimized for use
 
 ## Why KVCache for CAG?
 
-Context-Aware Generation models, particularly those using transformer architectures with multihead attention, benefit from efficient key-value caching:
+Cache Augmented Generation models, particularly those using transformer architectures with multihead attention, benefit from efficient key-value caching:
 
 - ✅ **Reduced Computation**: Avoid redundant attention calculations
 - ⚡ **Faster Inference**: Quick retrieval of cached context
